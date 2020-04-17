@@ -7,7 +7,18 @@
   <h1>This is the body</h1>
   <p>Aqui pones las cosas que van el body</p>
 
-  {% include 'personal/snippets/body_snippets.html' %}
+  <p><strong>{{some_string}}</strong></p>
+  <p><strong>{{some_number}}</strong></p>
+
+  {% for list_item in list_of_values %}
+    <ul>
+      <li>{% include 'personal/snippets/body_snippets.html' with value=list_item %}
+</li>
+    </ul>
+  {% endfor %}
+
+{% include 'personal/snippets/body_snippets.html' %}
+
 </div>
 
 
