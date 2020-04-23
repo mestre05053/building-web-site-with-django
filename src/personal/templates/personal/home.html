@@ -10,17 +10,23 @@
   <p><strong>{{some_string}}</strong></p>
   <p><strong>{{some_number}}</strong></p>
 
-  {% for list_item in list_of_values %}
+  {% for questions in questions %}
     <ul>
-      <li>{% include 'personal/snippets/body_snippets.html' with value=list_item %}
+      <li>{% include 'personal/snippets/body_snippets.html' with value=questions %}
 </li>
     </ul>
   {% endfor %}
+<h1>Abajo esta lo mio</h1> <br>
+  {% for bikes in bikes %}
+  	<ul> 
+  		<li>
+  			{% include 'personal/snippets/body_snippets.html' with valor=bikes %}
+  		</li>
+  	</ul>
+{% endfor %}
 
-{% include 'personal/snippets/body_snippets.html' %}
+<!-- {% include 'personal/snippets/body_snippets.html' %} -->
 
 </div>
-
-
 
 {% endblock content %}
