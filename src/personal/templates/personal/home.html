@@ -10,20 +10,12 @@
   <p><strong>{{some_string}}</strong></p>
   <p><strong>{{some_number}}</strong></p>
 
-  {% for questions in questions %}
-    <ul>
-      <li>{% include 'personal/snippets/body_snippets.html' with value=questions %}
-</li>
-    </ul>
+  {% for accounts in accounts %}
+
+  <p>{{accounts}}</p>
+    
   {% endfor %}
-<h1>Abajo esta lo mio</h1> <br>
-  {% for bikes in bikes %}
-  	<ul> 
-  		<li>
-  			{% include 'personal/snippets/body_snippets.html' with valor=bikes %}
-  		</li>
-  	</ul>
-{% endfor %}
+
 
 <!-- {% include 'personal/snippets/body_snippets.html' %} -->
 
