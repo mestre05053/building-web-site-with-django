@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     # my apps
     'personal',
+    'account',
     # las app que vienen por default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -70,6 +71,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'account.Account'
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
