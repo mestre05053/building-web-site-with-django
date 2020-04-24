@@ -3,27 +3,15 @@
 
 {% block content %}
 
-<div style="border: 2px solid #000;" >
-  <h1>This is the body</h1>
-  <p>Aqui pones las cosas que van el body</p>
+<div style="border: 2px solid #000; padding-left: 2%;" >
+  
+  <h3>Register Users:</h3>
+  {% for accounts in accounts %}
 
-  <p><strong>{{some_string}}</strong></p>
-  <p><strong>{{some_number}}</strong></p>
-
-  {% for questions in questions %}
-    <ul>
-      <li>{% include 'personal/snippets/body_snippets.html' with value=questions %}
-</li>
-    </ul>
+  <p>{{accounts}}</p>
+    
   {% endfor %}
-<h1>Abajo esta lo mio</h1> <br>
-  {% for bikes in bikes %}
-  	<ul> 
-  		<li>
-  			{% include 'personal/snippets/body_snippets.html' with valor=bikes %}
-  		</li>
-  	</ul>
-{% endfor %}
+
 
 <!-- {% include 'personal/snippets/body_snippets.html' %} -->
 

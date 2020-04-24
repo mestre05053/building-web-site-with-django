@@ -1,11 +1,21 @@
 from django.shortcuts import render
-from personal.models import Question
-from personal.models import Bikes
+# from personal.models import Question
+# from personal.models import Bikes
+from account.models import Account
 # Create your views here.
 
 def home_screen_view(request):
 
      context = {}
+
+     accounts = Account.objects.all()
+     context['accounts'] = accounts
+
+
+
+
+
+
      # list_of_values=[]
      # list_of_values.append("first entry")
      # list_of_values.append("second entry")
@@ -17,11 +27,11 @@ def home_screen_view(request):
      #context['some_number']=860623
 
     
-     questions = Question.objects.all()
-     context ['questions'] = questions
+     # questions = Question.objects.all()
+     # context ['questions'] = questions
 
-     bikes = Bikes.objects.all()
-     context ['bikes'] = bikes
+     # bikes = Bikes.objects.all()
+     # context ['bikes'] = bikes
 
 
      return render (request, "personal/home.html", context )
