@@ -3,13 +3,13 @@
 
 {% block content %}
 
-<div style="border: 2px solid #000;" >
+<div style="border: 2px solid #000; padding-left: 2%;" >
   <h1>This is the body</h1>
   <p>Aqui pones las cosas que van el body</p>
 
   <p><strong>{{some_string}}</strong></p>
   <p><strong>{{some_number}}</strong></p>
-
+  <h3>Register Users:</h3>
   {% for accounts in accounts %}
 
   <p>{{accounts}}</p>
