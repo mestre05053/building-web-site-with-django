@@ -3,18 +3,24 @@
 
 {% block content %}
 
-<div style="border: 2px solid #000; padding-left: 2%;" >
+ <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Learning Django from Scracth</h1>
+	  <p class="lead">
+	  	En este tutorial aprendi a hacer un Blog en Django con registro de usuarios y Blog Create-Retreive-Update-Delete functionality
+	  </p>
+  </div>
+
+  <div class="container">
+  		<div class="d-flex flex-column"> <!-- Flex box -->
+  			 <h3>Register Users:</h3>
+			  {% for accounts in accounts %}
+			  <p>{{accounts}}</p>	    
+			  {% endfor %}
+  		</div>
+  	
+
+  </div>
   
-  <h3>Register Users:</h3>
-  {% for accounts in accounts %}
-
-  <p>{{accounts}}</p>
-    
-  {% endfor %}
-
-
-<!-- {% include 'personal/snippets/body_snippets.html' %} -->
-
-</div>
+ 
 
 {% endblock content %}

@@ -1,46 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <meta charset="utf-8">
     <head>
-
-      <meta charset="utf-8">
-
-      <div>
-        <title>This is the Title</title>
-        <h1>This is the header</h1>
-
-          {% if request.user.is_authenticated %}
-              <p>
-                <a href="{% url 'home' %}">Home</a> | 
-                <a href="{% url 'account' %}">Account</a> |
-                <a href="{% url 'logout' %}">Logout</a> 
-              </p>
-              <p>Hello {{request.user.username}}</p>
-          {% else %}
-              <p style="margin-left: 1%;"> 
-                <a href="{% url 'home' %}">Home</a> | 
-                <a href="{% url 'register' %}">Register</a> | 
-                <a href="{% url 'login' %}">Login</a> 
-              </p>
-          {% endif %}
-
-      </div>
-      
-    </head>
-    <hr>
-
-
-
+       <title>This is the Title</title>
+          {% include 'snippets/header.html' %}
+   </head>
     <body>
-      {%block content%}
 
-      {%endblock content%}
+      <!-- Body -->
+      <style type="text/css">
+        .main {
+          min-height: 100vh;
+          height: 100%;
+        }
+      </style>
+      <div class="main">
+        {%block content%}
+
+          <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">Pricing</h1>
+            <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+          </div>
+
+        {%endblock content%}
+      </div>
+        
+      <!-- End Body -->
+        {% include 'snippets/footer.html' %}
     </body>
 
-
-    <footer>
-      <div>
-        <hr>
-        <h3>This is the footer</h3>
-      </div>
-    </footer>
 </html>
