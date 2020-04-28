@@ -36,7 +36,7 @@ urlpatterns = [
     path('logout/', logout_view, name="logout"),
     path('login/', login_view, name="login"),
     path('account/', account_view, name="account"),
-    #path('account/', include('django.contrib.auth.urls')), la forma predeterminada que tiene djanfo para hacer el cambio de password pero interfiere con mi plantilla
+    #path('account/', include('django.contrib.auth.urls')), #la forma predeterminada que tiene djanfo para hacer el cambio de password pero interfiere con mi plantilla
 
 
 
