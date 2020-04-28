@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # my apps
     'personal',
     'account',
+    'blog',
     # las app que vienen por default
     'django.contrib.admin',
     'django.contrib.auth',
