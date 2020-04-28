@@ -27,15 +27,17 @@ from account.views import(
     logout_view,
     login_view,
     account_view,
+    must_authenticate_view,
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', home_screen_view, name="home"),
+    path('admin/', admin.site.urls),
+    path('account/', account_view, name="account"),
     path('register/', registration_view, name="register"),
     path('logout/', logout_view, name="logout"),
+    path('must_authenticate/', must_authenticate_view, name="must_authenticate"),
     path('login/', login_view, name="login"),
-    path('account/', account_view, name="account"),
     #path('account/', include('django.contrib.auth.urls')), #la forma predeterminada que tiene djanfo para hacer el cambio de password pero interfiere con mi plantilla
 
 
