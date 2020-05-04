@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path #, include
 #from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings 
+
 
 from personal.views import (
     home_screen_view,
@@ -39,9 +42,7 @@ urlpatterns = [
     path('must_authenticate/', must_authenticate_view, name="must_authenticate"),
     path('login/', login_view, name="login"),
     #path('account/', include('django.contrib.auth.urls')), #la forma predeterminada que tiene djanfo para hacer el cambio de password pero interfiere con mi plantilla
-
-
-
-
-
     ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
