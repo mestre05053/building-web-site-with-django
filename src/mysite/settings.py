@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+if DEBUG: 
+    EMAIL_BACKEND = 'django.core.mail.backends.console.Email_Backend' # only during development
+
 
 # Application definition
 
@@ -35,6 +38,7 @@ INSTALLED_APPS = [
     # my apps
     'personal',
     'account',
+    'blog',
     # las app que vienen por default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -124,4 +128,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+#Esto esta aqui para montar los fircheros estaticos es decir imagenes, css, javascript, ficheros que no cambian 
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'media'),
+]
+
 STATIC_URL = '/static/'
+MEDIA_URL =  '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')

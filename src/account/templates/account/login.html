@@ -35,6 +35,11 @@
 </style>
 
 <form class="form-signin" method="post">{% csrf_token %}
+	<div class="d-flex flex-column" pb-3>
+		{% load static %}
+		<img src="{% static 'img.jpg' %}" width="72" height="72" alt="Bike Trip" image>
+		<img src="static/img.jpg" alt="new">
+	</div>
   <h1 class="h3 mb-3 font-weight-normal">Login</h1>
 
   <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required >
