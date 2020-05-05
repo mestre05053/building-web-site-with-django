@@ -31,6 +31,11 @@
 	  border-top-left-radius: 0;
 	  border-top-right-radius: 0;
 	}
+	.blog-posts{
+		max-width: 500px;
+		width: 100%;
+		margin: auto;
+	}
 
 </style>
 
@@ -60,4 +65,23 @@
 
   <button class="btn btn-lg btn-primary btn-block" type="submit">Saves changes</button>
 </form>
+
+<div class="container mt-4 p-4">
+	<div class="row">
+		<div class="blog-posts">
+			<h3 class="mb-3 font-weight-normal">Blog Post:</h3>
+			{% if blog_posts %}
+				<ul>
+				{% for posts in blog_posts %}
+					<a href="{% url 'blog:detail' posts.slug %}" style="text-decoration:none;">
+					<li class="list-group-item"> {{posts}} </li>
+					</a>
+				{% endfor %}
+				</ul>
+			{% else %}
+				<p>You dont have any post. Create a post <a href="{% url 'blog:create'%}">here</a>.</p>
+			{% endif %}
+		</div>
+	</div>
+</div>
 {% endblock content %}
