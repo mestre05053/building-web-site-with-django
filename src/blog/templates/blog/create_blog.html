@@ -2,6 +2,60 @@
 
 
 {% block content %}
-<p>Create new blog</...p>
+
+<style type="text/css">
+	
+	.create-form{
+		width: 100%;
+		max-width: 100%;
+		padding: 15px;
+		margin: auto;
+	}
+	.submit-button{
+		max-width: 200px;
+
+	}
+
+
+</style>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg offset-lg-1">
+			<form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+				<!-- Title -->
+				<div class="form-group">
+					<label for="id_title">Title</label>
+					<input class="form-control" type="text" name="title" id="id_title" placeholder="Title" required autofocus>					
+				</div>
+				<!-- Body -->
+				<div class="form-group">
+					<label for="id_body">Content</label>
+					<textarea class="form-group" rows="10" type="text" name="body" id="id_body" placeholder="This Blog is about..." required></textarea>
+				</div>
+				<!-- Image -->
+				<div class="form-group">
+					<label for="id_image">Image</label>
+					<input type="file" name="image" id="id_image" accept="image/*" required >
+				</div>
+
+				<!-- Submit -->
+				<button class="submit-button btn btn-lg btn-primary btn-lock" type="submit">Post</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock content %}
 
